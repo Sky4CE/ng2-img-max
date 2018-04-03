@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import 'exif-js/exif';
 var ImgExifService = (function () {
     function ImgExifService() {
     }
     ImgExifService.prototype.getOrientedImage = function (image) {
         var result = new Promise(function (resolve, reject) {
             var img;
+            var EXIF = require('exif-js');
             if (!EXIF) {
                 EXIF = {};
                 EXIF.getData = function (img, callback) {

@@ -1,8 +1,8 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('rxjs/Subject'), require('exif-js/exif'), require('ng2-pica')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/Subject', 'exif-js/exif', 'ng2-pica'], factory) :
-	(factory((global['ng2-img-max'] = global['ng2-img-max'] || {}),global.ng.core,global.rxjs_Subject,null,global.ng2Pica));
-}(this, (function (exports,_angular_core,rxjs_Subject,exifJs_exif,ng2Pica) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('rxjs/Subject'), require('ng2-pica')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', 'rxjs/Subject', 'ng2-pica'], factory) :
+	(factory((global['ng2-img-max'] = global['ng2-img-max'] || {}),global.ng.core,global.rxjs_Subject,global.ng2Pica));
+}(this, (function (exports,_angular_core,rxjs_Subject,ng2Pica) { 'use strict';
 
 var ImgExifService = (function () {
     function ImgExifService() {
@@ -10,6 +10,7 @@ var ImgExifService = (function () {
     ImgExifService.prototype.getOrientedImage = function (image) {
         var result = new Promise(function (resolve, reject) {
             var img;
+            var EXIF = require('exif-js');
             if (!EXIF) {
                 EXIF = {};
                 EXIF.getData = function (img, callback) {
