@@ -30,7 +30,7 @@
         "resize"
     ],
     "dependencies": {
-        "exif-js": "https://github.com/Sky4CE/exif-js/tarball/v2.3.0-fork.master",
+        "exif-js": "https://github.com/Sky4CE/exif-js/tarball/v2.3.0-fork.master.upd-1",
         "ng2-pica": "^1.2.0"
     },
     "peerDependencies": {
